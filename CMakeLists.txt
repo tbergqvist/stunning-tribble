@@ -12,6 +12,13 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(main src/main.cpp)
-target_compile_features(main PRIVATE cxx_std_17)
-target_link_libraries(main PRIVATE SFML::Graphics)
+add_executable(coolGame)
+target_sources(coolGame 
+    PRIVATE 
+    src/main.cpp 
+    src/game.cpp
+    src/state.cpp
+    src/ui/ui_screen.cpp
+)
+target_compile_features(coolGame PRIVATE cxx_std_17)
+target_link_libraries(coolGame PRIVATE SFML::Graphics)
